@@ -1,0 +1,47 @@
+get rid of duplicates  
+
+Just using vector, sort + unique (best)
+sort(a.begin(), a.end());
+a.erase(unique(a.begin(), a.end()), a.end());
+
+Convert to set (manually)
+set<int> s;
+unsigned size = vec.size();
+for( unsigned i = 0; i < size; ++i ) s.insert( vec[i] );
+vec.assign( s.begin(), s.end() );
+
+Convert to set (using a constructor)
+set<int> s( vec.begin(), vec.end() );
+vec.assign( s.begin(), s.end());
+
+bad -= !cnt[x]++;
+bad += !--cnt[x];
+
+next and prev permutation
+next_permutation(b.begin(), b.end());
+prev_permutation(b.begin(), b.end());
+
+std::vector dp(n + 1, std::array<i64, 2>{inf, inf});
+
+std::vector<int> p(n);
+std::iota(p.begin(), p.end(), 0);
+std::sort(p.begin(), p.end(), [&](int i, int j) {
+	return r[i] > r[j];
+});
+
+how to make a binary tree of array
+vector<int> mn(m * 2 - 1), mx(m * 2 - 1);
+for (int j = 0; j < m; j++){
+	mn[m - 1 + j] = p[j];
+	mx[m - 1 + j] = p[j];
+}
+for (int j = m - 2; j >= 0; j--){
+	mn[j] = min(mn[j * 2 + 1], mn[j * 2 + 2]);
+	mx[j] = max(mx[j * 2 + 1], mx[j * 2 + 2]);
+}
+
+// calculating maximum value index
+max_element(d.begin(), d.end()) - d.begin();
+
+checking all character equal
+s == string(s.size(), s[0])
